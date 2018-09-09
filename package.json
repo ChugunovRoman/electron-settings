@@ -1,19 +1,18 @@
 {
   "name": "electron-settings",
-  "version": "3.1.4",
+  "version": "4.0.0",
   "description": "A simple persistent user settings framework for Electron.",
-  "main": "index.js",
-  "scripts": {
-    "test": "npm run test:main && npm run test:renderer",
-    "test:main": "electron-mocha tests",
-    "test:renderer": "electron-mocha tests --renderer"
+  "main": "lib/settings.js",
+  "license": "MIT",
+  "author": {
+    "name": "Nathan Buchar",
+    "email": "hello@nathanbuchar.com",
+    "url": "https://www.nathanbuchar.com"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/nathanbuchar/electron-settings.git"
   },
-  "author": "Nathan Buchar <hello@nathanbuchar.com>",
-  "license": "ISC",
   "keywords": [
     "electron",
     "app",
@@ -22,28 +21,33 @@
     "settings",
     "config",
     "storage",
-    "json",
-    "has",
-    "get",
-    "getAll",
-    "set",
-    "setAll",
-    "delete",
-    "deleteAll",
-    "watch",
-    "file"
+    "json"
   ],
+  "scripts": {
+    "test": "electron-mocha test && electron-mocha test --renderer"
+  },
   "dependencies": {
-    "clone": "^2.1.1",
-    "jsonfile": "^4.0.0"
+    "graceful-fs": "^4.2.0",
+    "key-path-helpers": "^0.4.0",
+    "mkdirp": "^0.5.1",
+    "write-file-atomic": "^3.0.0"
   },
   "devDependencies": {
-    "electron": "^1.7.8",
-    "electron-mocha": "^4.0.3",
-    "eslint": "^4.7.2",
-    "eslint-config-airbnb-base": "^12.0.0",
-    "eslint-plugin-import": "^2.7.0",
-    "mocha": "^3.5.3",
-    "randomstring": "^1.1.5"
-  }
+    "electron": "^5.0.6",
+    "electron-mocha": "^8.0.3",
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.0",
+    "jest": "^24.8.0",
+    "randomstring": "^1.1.5",
+    "rimraf": "^2.6.3"
+  },
+  "peerDependencies": {
+    "electron": "^2.0.0"
+  },
+  "files": [
+    "AUTHORS",
+    "lib/*"
+  ]
 }
